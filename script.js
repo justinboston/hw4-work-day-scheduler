@@ -1,25 +1,22 @@
-  // Instructs engine to load the HTML and CSS before running the JS
   $(document).ready(function () {
 
-    // Create a variable and use query selector to display current date and time
+    // Dsplay current day & date
     var displayTime = document.querySelector("#currentDay");
-  
-    // Use dayjs to display current date and time in given format
-    var currentTime = dayjs().format("dddd, MMMM D, YYYY, h:mm:ss a");
+    var currentTime = dayjs().format("dddd, MMMM D, YYYY");
   
     displayTime.textContent = currentTime;
   
-    // Assign saveBtn click listener for user input and get row id and save to local storage
+    // Click event listener for user text input
     $(".saveBtn").on("click", function () {
       var text = $(this).siblings(".description").val();
       var time = $(this).parent().attr("id");
   
-      // Save text in local storage
+      // Save text input to local storage
       localStorage.setItem(time, text);
     });
   
     function hourTracker() {
-      // Get current number of hours.
+      // Get current hour
       var currentHour = dayjs().hour();
     
       // Loop over time blocks
@@ -40,12 +37,9 @@
       });
     }
     hourTracker();
-  
-  // Create a function to loop over time blocks to retrieve and display data from local storage
+
   function displayText() {
-    // Loop over time blocks
     $(".time-block").each(function () {
-      // var blockHour = parseInt($(this).attr("id").split("-")[1]);
       var blockHour = $(this).attr("id");
       $(this).children(".description").val(localStorage.getItem(blockHour));
     });
