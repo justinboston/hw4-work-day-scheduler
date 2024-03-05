@@ -27,7 +27,7 @@ WHEN I refresh the page
 THEN the saved events persist
 
 ## Mockup
-Assets/05-third-party-apis-homework-demo.gif
+https://github.com/justinboston/hw5-work-day-scheduler/blob/feature/updateREADME/Assets/05-third-party-apis-homework-demo.gif
 
 ## Usage
 As an employee, please input your daily schedule in each time block using text input. When complete, please hover & click the file icon to save your text input to local storage. When you refresh the page throughout the day, not only should your schedule populate automatically (when saved), but the current hour should be hilighted in green, future hours should be highlighted in red, future hours highlighted in green and past hours highlighted in grey.
